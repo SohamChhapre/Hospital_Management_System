@@ -1,0 +1,73 @@
+
+ 
+
+
+
+.boxProfilePhoto {
+    width: 80px;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    border-radius: 50%;
+}
+.boxProfilePhoto .custom-file {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.4);
+}
+.boxProfilePhoto .custom-file i {
+    position: ;
+    top: 50%;
+    left: 50%;
+    color: #FFF;
+    font-size: 20px;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.boxProfilePhoto .custom-file .customFileInput {
+    position: absolute;
+    height: 100%;
+    z-index: 1000;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+
+.inputfile-3 + label {
+    color: #d3394c;
+}
+
+.inputfile-3:focus + label,
+.inputfile-3.has-focus + label,
+.inputfile-3 + label:hover {
+    color: #722040;
+}

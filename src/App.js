@@ -1,25 +1,59 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import {BrowserRouter,Link,Route,Switch,Redirect} from 'react-router-dom';
+// import {} from 'react-router';
+import Navbar from './Components/Navbar';
+import Sidebar from './Components/Sidebar';
+import Dashboard from './Components/Dashboard/Dashboard';
+import AddDoctor from './Components/AddDoctor/AddDoctor'
+import AddPatient from './Components/AddPatient/AddPatient';
+import PatientsList from './Components/Patients/PatientsList';
+import Addappointment from './Components/Addappointment'
+import DoctorsList from './Components/Doctors/DoctorsList'
 
-function App() {
+const App=()=> {
+
+  const [isdashboard,setIsdashboard]=useState(true);
+  
+
+
+  const checkurl=(url)=>{
+
+  }
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      
+           <BrowserRouter>
+
+                    <Switch>
+                      <Redirect exact from='/' to='/dashboard' /> 
+                      <Route exact path="/dashboard" component={(props)=> <Dashboard {...props}/> } />
+                
+                      <Route exact path="/doctors" component={(props)=><DoctorsList {...props} />} />
+                
+                      <Route exact path="/patients" component={(props)=><PatientsList {...props}/>} />
+
+                      <Route exact path="/addDoctor" component={(props)=><AddDoctor {...props}/>}/>
+
+                      <Route exact path="/addPatient" component={(props)=><AddPatient {...props} /> }/>
+                      
+                      <Route exact path="/addAppointment" component={(props)=><Addappointment {...props} /> }/>
+                      
+                      
+                    </Switch>
+                    
+                    {/* <Dashboard/> */}
+                
+
+               </BrowserRouter>
+     
+
     </div>
+    
   );
 }
 
