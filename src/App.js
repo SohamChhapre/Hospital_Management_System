@@ -11,6 +11,8 @@ import AddPatient from './Components/AddPatient/AddPatient';
 import PatientsList from './Components/Patients/PatientsList';
 import Addappointment from './Components/Addappointment'
 import DoctorsList from './Components/Doctors/DoctorsList'
+import Login from './Components/Users/Login'
+
 
 const App=()=> {
 
@@ -31,6 +33,8 @@ const App=()=> {
 
                     <Switch>
                       <Redirect exact from='/' to='/dashboard' /> 
+                      <Route exact path="/login" component={(props)=><Login {...props}/>}/>
+
                       <Route exact path="/dashboard" component={(props)=> <Dashboard {...props}/> } />
                 
                       <Route exact path="/doctors" component={(props)=><DoctorsList {...props} />} />

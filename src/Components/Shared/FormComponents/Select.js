@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-const Select=({classname,arr,value,isreq,onChangehandler,onChangeValid})=>{
+const Select=({classname,arr,value,isreq,onChangehandler,onChangeValid,name})=>{
 
     const [message,setMessage]=useState("");
         return(<div>
@@ -11,7 +11,7 @@ const Select=({classname,arr,value,isreq,onChangehandler,onChangeValid})=>{
                     setMessage(message)
                 }} 
                 value={value}>
-                <option value="">select</option>
+                <option value="">Select {name}</option>
                 {   arr.map((e, i)=>(
                     <option key={i} value={`${e.id}$${e.name}`}>
                         {e.name}

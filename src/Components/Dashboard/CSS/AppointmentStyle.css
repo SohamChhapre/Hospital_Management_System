@@ -1,0 +1,51 @@
+
+.appointment-table{
+    width: 100%;
+}
+.appointment-table 
+li {
+  border-radius: 4px;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.appointment-table   .table-header {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: bold;
+  color: dimgray;
+}
+.appointment-table  .table-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+  padding: 10px 0px;
+}
+.appointment-table    .col {
+    padding:0px 0px;
+    
+  }
+.appointment-table    .col-1 {
+  flex-basis: 35%;
+  padding-left: 20px;
+}
+.appointment-table  .col-2 {
+  flex-basis: 10%;
+  padding-left: 20px;
+
+}
+.appointment-table  .col-3 {
+  flex-basis: 25%;
+  padding-left: 20px;
+
+}
+.appointment-table  .col-4 {
+  flex-basis: 10%;
+  padding-left: 20px;
+
+}
+
+
+  
+ 

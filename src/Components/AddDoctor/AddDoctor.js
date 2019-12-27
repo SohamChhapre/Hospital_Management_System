@@ -6,7 +6,7 @@ import attach_icon from '../../../src/assets/icons/attach_icon.png';
 import Navbar from '../../Components/Navbar';
 import Sidebar from '../../Components/Sidebar';
 import {Link,NavLink} from 'react-router-dom';
-
+import user_img from '../../../src/assets/img/user.png'
 
 const AddDoctor=()=>{
 
@@ -31,8 +31,11 @@ const AddDoctor=()=>{
 
       <div className="boxProfilePhoto">
         <div className="custom-file">
-          <i className="fas fa-camera" />
-          <input type="file" className="customFileInput" aria-describedby="inputGroupFileAddon01" />
+        <img src={user_img} class="img-fluid rounded-circle" />
+
+        <label for="imgfile" className="" style={{position: "absolute",top: "50%",left: "50%"}}>   <input type="file" id="imgfile" className="" style={{opacity:0,width:0}} aria-describedby="inputGroupFileAddon01" />
+          <i class="fa fa-picture-o" aria-hidden="true"></i>
+        </label>
         </div>
       </div>
       <div className="row my-4">
@@ -121,7 +124,7 @@ const AddDoctor=()=>{
         <div className="col">
         <div className="form-group">
             <p>Documents</p>
-           <label for="inputfile" class="text-primary">
+        <label for="inputfile" class="text-primary">
             <img src={attach_icon} width="12px" height="12px" style={{paddingRight:"2px"}}/>
            Attach Documents
             <input type="file" name="file" id="inputfile" style={{opacity: "0"}}  multiple />
@@ -133,7 +136,7 @@ const AddDoctor=()=>{
         </div>
       </div>
       <div className="mx-auto text-center">
-       <NavLink exact to="/addDoctor" className="btn btn-primary px-5">Add Doctor</NavLink>
+       <button  exact to="/addDoctor" className="btn btn-primary px-5">Add Doctor</button>
       </div>
     </div>
   </form>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import medanta_logo from '../../src/assets/img/medanta-logo.png';
 
 
 const Navbar=({issearch})=>{
@@ -7,7 +7,7 @@ const Navbar=({issearch})=>{
         <div>
   <nav className="navbar navbar-expand-sm bg-white navbar-light my-2">
     <div className="col-lg-2 col-md-2 col-sm-12 ">
-      <a className="navbar-brand mx-5 " href="#">Logo</a>
+      <a className="navbar-brand" href="#"><img src={medanta_logo} height="45px"/></a>
     </div>
     { issearch && <div className="col-lg-10 col-md-10 col-sm-12 bg-white">
       <form className="form-inline">

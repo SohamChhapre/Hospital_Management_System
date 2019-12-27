@@ -40,7 +40,7 @@ const DashboardRightIndex=()=>{
                 <div className="card-body">
                   <p className="card-title bg-primary text-white rounded-right">Doctor of the month</p>
                   <div className="card-text text-center">
-                    <img src={doctor_img} className="mx-auto rounded-circle" height="25px" Width="25px"/>
+                    <img src={doctor_img} className="mx-auto rounded-circle" height="25px" width="25px"/>
                     <div>Dr.Messy Willaiams</div>
                     <small className="text-secondary">Cardiology</small>
                   </div>
@@ -48,13 +48,13 @@ const DashboardRightIndex=()=>{
                 <div className="card-footer">
                 <div className="row">
                 <div className="mx-auto">
-                <img src={operations_logo}  className="" height="30px" Width="30px"/>
+                <img src={operations_logo}  className="" height="30px" width="30px"/>
                 <div className=""> <div>150</div>
                     Operations
                     </div>
                 </div>
                 <div className="mx-auto"> 
-                      <img src={no_of_patients_logo } height="30px" Width="30px"/>
+                      <img src={no_of_patients_logo } height="30px" width="30px"/>
                 <div className="mx-auto"> <div>150</div>
                         Patients
                 </div>
