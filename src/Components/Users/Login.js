@@ -1,6 +1,5 @@
 import React from 'react';
-import login_img from '../../../src/assets/img/login.jpg'
-
+import login_img from '../../../src/assets/icons/bg.png'
 
 
 const Login=()=>{
@@ -23,7 +22,7 @@ const Login=()=>{
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                     <div class="input-group-text bg-light border-right-0"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-</div>
+                    </div>
                     </div>
                 
               <input type="email" name id="email" className="form-control bg-light border-left-0" required placeholder="E-mail Address" />
