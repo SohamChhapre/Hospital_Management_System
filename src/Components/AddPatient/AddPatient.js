@@ -24,11 +24,7 @@ const AddPatient=()=>{
     }]
 
     
-  //   useEffect(()=>{
-  // },[])
-    //  useEffect(()=>{
-    //        },
-    //        [documents])
+  
     const onFileChange = e => {
         e.preventDefault();
       if(e.target.name==='profileimg'){
@@ -39,6 +35,7 @@ const AddPatient=()=>{
             setPreviewUrl(upload.target.result);
           };
           reader.readAsDataURL(file);
+          setPatientobj({...patientobj,profile_picture:file})
       }
       else{
           let files=e.target.files;

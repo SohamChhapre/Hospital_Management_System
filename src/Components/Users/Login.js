@@ -1,10 +1,12 @@
-import React from 'react';
+import React,{useState} from 'react';
 import login_img from '../../../src/assets/icons/bg.png'
 
 
 const Login=()=>{
+    const [user,setUser]=useState({email:"",password:""})
 
 
+    
     return (
         <div className="container-fluid"> 
     <div className="row " style={{height:"100vh"}}>
@@ -25,7 +27,10 @@ const Login=()=>{
                     </div>
                     </div>
                 
-              <input type="email" name id="email" className="form-control bg-light border-left-0" required placeholder="E-mail Address" />
+              <input type="email" name id="email" className="form-control bg-light border-left-0" onChange={(e)=>{
+                      setUser({...user,email:e.target.value})
+                      console.log(user);
+              }} required placeholder="E-mail Address" />
                 </div>
                 </div>
                 <div className="form-group">
@@ -34,12 +39,19 @@ const Login=()=>{
                     <div class="input-group-prepend">
                     <div class="input-group-text bg-light border-right-0"><i class="fa fa-lock" aria-hidden="true"></i></div>
                     </div>
-              <input type="password" name  id="password" className="form-control bg-light border-left-0" required placeholder="Enter password" />
+              <input type="password" name  id="password" className="form-control bg-light border-left-0" onChange={(e)=>{
+                      setUser({...user,password:e.target.value})
+                      console.log(user);
+               }} required placeholder="Enter password" />
                 </div>
                 </div>
              
               
-              <button className="btn btn-primary px-5">Login</button>
+              <button className="btn btn-primary px-5" onClick={()=>{
+
+                  
+
+              }}>Login</button>
             </form>
            
           </div>

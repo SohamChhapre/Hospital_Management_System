@@ -11,11 +11,16 @@
     }
     .responsive-table   .table-header {
       
-      font-size: 12px;
+      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.03em;
       font-weight: bold;
       color: dimgray;
+     
+    }
+
+    .responsive-table   .table-header .col{
+      cursor: pointer;
     }
     .responsive-table  .table-row {
       background-color: #ffffff;
@@ -40,17 +45,17 @@
 
     }
     .responsive-table  .col-4 {
-      flex-basis: 16%;
+      flex-basis: 25%;
       padding-left: 20px;
 
     }
     .responsive-table  .col-5 {
-        flex-basis: 20%;
+        flex-basis: 10%;
         padding-left: 20px;
 
       }
       .responsive-table  .col-6 {
-        flex-basis: 20%;
+        flex-basis: 19%;
         padding-left: 20px;
 
       }
@@ -63,8 +68,75 @@
           padding-left: 20px;
       }
       
-      
+  
     
+      .patients-table{
+        width: 100%;
+    }
+  .patients-table 
+    li {
+      border-radius: 4px;
+      padding: 0px 5px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .patients-table   .table-header {
+      
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      font-weight: bold;
+      color: dimgray;
+    }
+    .patients-table   .table-header .col{
+      cursor: pointer;
+    }
+    .patients-table  .table-row {
+      background-color: #ffffff;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+      padding: 10px 0px;
+    }
+    .patients-table    .col {
+        padding:0px 0px;
+      }
+    .patients-table    .col-1 {
+      flex-basis: 5%;
+      padding-left: 20px;
+    }
+    .patients-table  .col-2 {
+      flex-basis: 25%;
+      padding-left: 20px;
+
+    }
+    .patients-table  .col-3 {
+      flex-basis: 5%;
+      padding-left: 20px;
+
+    }
+    .patients-table  .col-4 {
+      flex-basis: 15%;
+      padding-left: 20px;
+
+    }
+    .patients-table  .col-5 {
+        flex-basis: 20%;
+        padding-left: 20px;
+
+      }
+      .patients-table  .col-6 {
+        flex-basis: 20%;
+        padding-left: 20px;
+
+      }
+      .patients-table .col-7{
+          flex-basis: 5%;
+          padding-left: 20px;
+      }
+      .patients-table .col-8{
+          flex-basis: 5%;
+          padding-left: 20px;
+      }
     @media all and (max-width: 767px) {
         .table-header {
             display: none;

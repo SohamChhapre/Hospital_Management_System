@@ -1,12 +1,16 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Navbar from '../../Components/Navbar';
 import Sidebar from '../../Components/Sidebar';
 import {NavLink,Link} from 'react-router-dom';
 import '../../Components/Shared/CSS/TableStyle.css';
 import User_img from '../../../src/assets/img/user.png';
 import PatientTable from './PatientTable';
+import {PatientsJSON} from './PatientsJSON';
 
 const PatientsList=()=>{
+  const patients=PatientsJSON;
+  const [searchname,setSearchname]=useState("")
+
     return (
       <div>
       <Navbar issearch={false}/>
@@ -38,7 +42,7 @@ const PatientsList=()=>{
               </div>
               <div className="row mx-3 my-4">
               
-              <PatientTable/>
+              <PatientTable patients={patients}/>
 
               </div>
             </div>

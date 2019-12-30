@@ -10,7 +10,7 @@ import AddDoctor from './Components/AddDoctor/AddDoctor'
 import AddPatient from './Components/AddPatient/AddPatient';
 import PatientsList from './Components/Patients/PatientsList';
 import Addappointment from './Components/Addappointment'
-import DoctorsList from './Components/Doctors/DoctorsList'
+import Doctors from './Components/Doctors/Doctors'
 import Login from './Components/Users/Login'
 import PatientDetails from './Components/Dashboard/SubComponents/PatientDetails'
 
@@ -43,7 +43,7 @@ const App=()=> {
                       {/* <Route exact path="/dashboard/:name/:id" component={(props)=><PatientDetails {...props} />}/> */}
 
                 
-                      <Route exact path="/doctors" component={(props)=><DoctorsList {...props} />} />
+                      <Route exact path="/doctors" component={(props)=><Doctors {...props} />} />
                 
                       <Route exact path="/patients" component={(props)=><PatientsList {...props}/>} />
 

@@ -1,29 +1,30 @@
 export const Patient_JSON={
-    patient_name:"",
+    name:"",
     age:"",
     blood_group:"",
-    phone_number:"",
-    email_address:"",
+    phone:"",
+    email:"",
     city:"",
     address:"",
-    profile_img:"",
+    profile_picture:"",
+    gender:"",
     documents:[]
 }
 
 export const Blood_group=[{
-        id:1,name:"A RhD positive (A+)"
+        id:1,name:"A+"
     },{
-        id:2,name:"A RhD negative (A-)"
+        id:2,name:"A-"
     },{
-      id:3,name:"B RhD positive (B+)"
+      id:3,name:"B+"
     },{
-      id:4,name:"B RhD negative (B-)"
+      id:4,name:"B-"
     },{
-      id:5,name:"O RhD positive (O+)"
+      id:5,name:"O+"
     },{
-      id:6,name:"O RhD negative (O-)"
+      id:6,name:"O-"
     },{
-      id:7,name:"AB RhD positive (AB+)"
+      id:7,name:"AB+"
     },{
-      id:8,name:"AB RhD positive (AB-)"
+      id:8,name:"AB-"
     }]
