@@ -7,8 +7,9 @@ export const Patient_JSON={
     city:"",
     address:"",
     profile_picture:"",
-    gender:"",
-    documents:[]
+    documents:[],
+    user:"",
+    gender:"M"
 }
 
 export const Blood_group=[{

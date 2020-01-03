@@ -11,7 +11,7 @@ const Select=({classname,arr,value,isreq,onChangehandler,onChangeValid,name})=>{
                     setMessage(message)
                 }} 
                 value={value}>
-                <option value="">Select {name}</option>
+                <option value="" >Select {name}</option>
                 {   arr.map((e, i)=>(
                     <option key={i} value={`${e.id}$${e.name}`}>
                         {e.name}

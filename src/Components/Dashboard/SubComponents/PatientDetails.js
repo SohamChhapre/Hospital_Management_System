@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import User_img from '../../../../src/assets/img/user.png'
 import age_icon from '../../../../src/assets/icons/age.png'
@@ -83,8 +83,12 @@ const AppointmentHistory=()=>{
     )
 }
 
-const PatientDetails=()=>{
+const PatientDetails=({handlenameid,match})=>{
       console.log("Patient Details")
+      useEffect(()=>{
+          console.log("Match in personal",match)
+
+      })
     return(
              <div className>
              <div className="row bg-white px-2 py-1">
@@ -110,7 +114,7 @@ const PatientDetails=()=>{
                 <div className="col">
                 <img src={call_icon} className="mr-2" width="20px"/> 9304084343</div>
                 <div className="col">
-                <img src={location_icon} className="mr-2" height="15px"/>Nrk biz park   </div>
+                <img src={location_icon} className="mr-2" height="15px"/>Nrk biz park</div>
                 <div className="col">
                 <img src={city_icon} className="mr-2" height="15px"/>London</div>
             </div>

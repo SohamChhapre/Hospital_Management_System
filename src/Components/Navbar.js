@@ -1,13 +1,14 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import medanta_logo from '../../src/assets/img/medanta-logo.png';
-
+import {logo_url} from './Shared/Config'
 
 const Navbar=({issearch,name,id,onchange})=>{
     return (
         <div>
   <nav className="navbar navbar-expand-sm bg-white navbar-light my-2">
     <div className="col-lg-2 col-md-2 col-sm-12 ">
-      <a className="navbar-brand" href="#"><img src={medanta_logo} height="45px"/></a>
+      <Link to="/dashboard" className="navbar-brand" ><img src={logo_url} height="45px"/></Link>
     </div>
     { issearch && <div className="col-lg-10 col-md-10 col-sm-12 bg-white">
       <form className="form-inline">

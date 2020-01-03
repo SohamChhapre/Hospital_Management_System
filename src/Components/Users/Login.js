@@ -1,10 +1,34 @@
 import React,{useState} from 'react';
 import login_img from '../../../src/assets/icons/bg.png'
+import Axios from 'axios';
+import {ApiUrl} from '../Shared/Config';
+import {useAlert} from 'react-alert';
 
+const Login=({setAuth})=>{
+    const [user,setUser]=useState({username:"",password:""})
+    const Alert=useAlert();
+    const handlesubmit=(e)=>{
+      e.preventDefault()
+      console.log(user);
+          Axios.post(`${ApiUrl}/auth/api-token-auth/`,user) 
+          .then((result) => {
+            console.log(result);
+            setAuth(result.data.data)
+            Alert.show('Login Successfully', {
+            timeout: 3000,
+            type: 'success',
+          })
+             
+            })
+        .catch((err) => {
+            console.log(err);
+      //     Alert.show('Some message', {
+      //       timeout: 3000,
+      //       type: 'error',
+      // })    
+        });
 
-const Login=()=>{
-    const [user,setUser]=useState({email:"",password:""})
-
+    }
 
     
     return (
@@ -17,7 +41,7 @@ const Login=()=>{
           
           <div className="login">
            
-            <form action className="pt-3 ">
+            <form action className="pt-3 " onSubmit={(e)=>handlesubmit(e)}>
                 <h4 className="font-weight-bold">Login</h4>
                 <div className="form-group mt-5">
                 <label for="email" >Enter Email Id</label>
@@ -28,7 +52,7 @@ const Login=()=>{
                     </div>
                 
               <input type="email" name id="email" className="form-control bg-light border-left-0" onChange={(e)=>{
-                      setUser({...user,email:e.target.value})
+                      setUser({...user,username:e.target.value})
                       console.log(user);
               }} required placeholder="E-mail Address" />
                 </div>
@@ -47,11 +71,7 @@ const Login=()=>{
                 </div>
              
               
-              <button className="btn btn-primary px-5" onClick={()=>{
-
-                  
-
-              }}>Login</button>
+              <button className="btn btn-primary px-5" type="submit">Login</button>
             </form>
            
           </div>
