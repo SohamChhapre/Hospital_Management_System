@@ -10,10 +10,14 @@ import user_img from '../../../src/assets/img/user.png'
 import {Patient_JSON,Blood_group} from './PatientJSON';
 import {ApiUrl,config} from '../Shared/Config';
 import Axios from 'axios';
+import {useAlert} from 'react-alert'
+
+
 const AddPatient=()=>{
     const [patientobj,setPatientobj]=useState(Patient_JSON);
     const [preview_url,setPreviewUrl]=useState("");
     const [filesname,setFilesname]=useState([])
+        const Alert = useAlert()
 
     const arr=[{
         id:1,name:"Rahul"
@@ -22,7 +26,9 @@ const AddPatient=()=>{
     },{
       id:3,name:"Ronit"
     }]
-
+    useEffect(()=>{
+        
+    },[patientobj])
     
   
     const onFileChange = e => {
@@ -80,8 +86,19 @@ const AddPatient=()=>{
       }
       Axios.post(`${ApiUrl}/patient/`,data,config).then((response)=>{
         console.log(response);
+        Alert.show(response.data.message, {
+        timeout: 5000,
+        type: 'success',
+      })
+      setFilesname([])
+      setPreviewUrl("")
+      setPatientobj(Patient_JSON)
       }).catch((err)=>{
         console.log(err);
+        Alert.show('Something went Wrong', {
+        timeout: 5000,
+        type: 'error',
+      })
       })
       console.log(patientobj);
     }

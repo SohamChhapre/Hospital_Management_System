@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ApiUrl="http://192.168.1.75:8000";
+export const ApiUrl="http://192.168.43.43:8000";
 
 const data=localStorage.getItem("authuser")
 let token=""

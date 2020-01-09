@@ -1,18 +1,34 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import doctor_img from '../../../src/assets/icons/avg_patients.png'
 import operations_logo from '../../../src/assets/icons/operations.png'
 import no_of_patients_logo from '../../../src/assets/icons/no_of_patients.png'
 // import Chart from 'react-chartjs-2'
 import {Doughnut,Line} from 'react-chartjs-2';
+import {ApiUrl} from '../Shared/Config'
 
-
-const DashboardRightIndex=()=>{
+const DashboardRightIndex=({data})=>{
+    console.log("in right index",data)
+    const [bestdoc,setBestdoc]=useState("")
+    const [stats,setStats]=useState({})
+   useEffect(()=>{
+       
+      setBestdoc(data.best_doc)
+      setStats(data.AdmByDiv)
+     
+   },[data])
+   let label=[]
+   let statsdata=[]
+   if(stats){
+     for(let i=0;i<stats.length;i++){
+       label.push(stats[i].name)
+        statsdata.push(stats[i].total)
+     }
+   }
    const state = {
-  labels: ['January', 'February', 'March',
-           'April', 'May'],
+  labels:label,
   datasets: [
     {
-      label: 'Rainfall',
+      label: 'Admission by department',
       backgroundColor: [
         '#B21F00',
         '#C9DE00',
@@ -28,34 +44,33 @@ const DashboardRightIndex=()=>{
       '#003350',
       '#35014F'
       ],
-      data: [65, 59, 80, 81, 56]
+      data: statsdata
     }
   ]
 }
 
         return (
             <div className="col-lg-3 col-md-3 col-sm-6 my-2">
-              <div className="card  mb-3" style={{maxWidth: '20rem'}}>
-               
+              { bestdoc && <div className="card  mb-3" style={{maxWidth: '20rem'}}>
                 <div className="card-body">
                   <p className="card-title bg-primary text-white rounded-right">Doctor of the month</p>
                   <div className="card-text text-center">
-                    <img src={doctor_img} className="mx-auto rounded-circle" height="25px" width="25px"/>
-                    <div>Dr.Messy Willaiams</div>
-                    <small className="text-secondary">Cardiology</small>
+                    <img src={`${ApiUrl}${bestdoc.doctor.profile_picture}`} className="mx-auto rounded-circle" height="45px" width="45px"/>
+                    <div>{bestdoc.doctor.name}</div>
+                      <small className="text-secondary">{bestdoc.doctor.department.name}</small>
                   </div>
                 </div>
                 <div className="card-footer">
                 <div className="row">
                 <div className="mx-auto">
                 <img src={operations_logo}  className="" height="30px" width="30px"/>
-                <div className=""> <div>150</div>
+                  <div className=""> <div>12</div>
                     Operations
                     </div>
                 </div>
                 <div className="mx-auto"> 
                       <img src={no_of_patients_logo } height="30px" width="30px"/>
-                <div className="mx-auto"> <div>150</div>
+                <div className="mx-auto"> <div>{bestdoc.total}</div>
                         Patients
                 </div>
                 </div>
@@ -63,7 +78,7 @@ const DashboardRightIndex=()=>{
 
                 </div>
                 </div>
-              </div>
+              </div>}
               <div className="card  mb-3" style={{maxWidth: '20rem'}}>
                 <div className="card-body">
                  
@@ -72,7 +87,7 @@ const DashboardRightIndex=()=>{
           options={{
             title:{
               display:true,
-              text:'Average Rainfall per month',
+              text:'Admission By Division',
               fontSize:10
             },
             legend:{

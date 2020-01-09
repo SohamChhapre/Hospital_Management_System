@@ -68,7 +68,7 @@ const AppointmentRow=({appointment:{appointment_id,diagnosis,doctor_data,patient
             <li className="table-row">
             <div className="col col-1" style={{paddingLeft:'14px',fontSize:"13px"}}>{datetime.date}
             <p style={{color:"grey"}}>{datetime.time}</p></div>
-            <div className="col col-2"><img src={`${ApiUrl}${patient_data.profile_picture}`} className="img-fluid rounded-circle mr-2" width="40px" alt="User"/>{patient_data.name}</div>
+            <div className="col col-2"><img src={`${ApiUrl}${patient_data.profile_picture}`} className=" rounded-circle mr-2" width="40px" height="40px" alt="User"/>{patient_data.name}</div>
             <div className="col col-3"><div className="rounded-circle btn btn-sm" style={{color: 'red',width:'10px',height:"10px"}}></div>{status}</div>
             <div className="col col-4 text-center"><img src={attach_icon} className="mr-2" height="14px"/></div>
             <div className="col col-5"><img src={share_icon} className="mr-3" height="14px"/>
@@ -108,6 +108,11 @@ const AppointmentHistory=({id})=>{
   },[])
     return (
             <ul className="appointment_history-table pl-0" >
+             { !appointments.length &&
+              <div className="text-center text-danger">No appointments to display</div>
+            }
+
+            { appointments.length>0 &&
             <li className="table-header">
             <div className="col col-1">Date</div>
             <div className="col col-2">Patient Details</div>
@@ -117,7 +122,9 @@ const AppointmentHistory=({id})=>{
             <div className="col col-6"></div>
             
             </li>
-      {appointments && appointments.map((e,i)=><AppointmentRow handletoggle={setToggleid} appointment={e} key={i} toggleid={toggleid}/>)}
+}
+           
+      {appointments && appointments.length>0 && appointments.map((e,i)=><AppointmentRow handletoggle={setToggleid} appointment={e} key={i} toggleid={toggleid}/>)}
        
        
     

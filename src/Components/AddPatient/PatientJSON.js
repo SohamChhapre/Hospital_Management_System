@@ -9,7 +9,7 @@ export const Patient_JSON={
     profile_picture:"",
     documents:[],
     user:"",
-    gender:"M"
+    gender:""
 }
 
 export const Blood_group=[{

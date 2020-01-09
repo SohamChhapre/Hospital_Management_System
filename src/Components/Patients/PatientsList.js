@@ -8,10 +8,10 @@ import PatientTable from './PatientTable';
 import {PatientsJSON} from './PatientsJSON';
 import Axios from 'axios';
 import {ApiUrl,config} from '../Shared/Config'
-
-
+import loader_img from '../../../src/assets/img/loader.gif'
+ 
 const PatientsList=({match})=>{
-  const patients=PatientsJSON;
+  const [patients,setPatients]=useState([])
   const [searchname,setSearchname]=useState("")
   const [id,setId]=useState("")
   const [name,setName]=useState("")
@@ -20,6 +20,7 @@ const PatientsList=({match})=>{
       await Axios.get(`${ApiUrl}/patient/list/`,config)
       .then((response)=>{
         console.log("patient list",response)
+        setPatients(response.data.data)
       })
       .catch((err)=>{
 
@@ -27,6 +28,7 @@ const PatientsList=({match})=>{
       })
       
       }
+      // setPatients(PatientsJSON)
       getPatients()
   },[])
   const handleid=(id,name)=>{
@@ -36,7 +38,7 @@ const PatientsList=({match})=>{
   }
     return (
       <div>
-      { id && <Redirect exact to={`/dashboard/${name}/${id}`} />}
+      { id && <Redirect exact to={`/dashboard/${id}`} />}
       <Navbar issearch={false}/>
         <div className="row mx-0" >
               <Sidebar/>
@@ -65,8 +67,8 @@ const PatientsList=({match})=>{
                 </div>
               </div>
               <div className="row mx-3 my-4">
-              
-              <PatientTable patients={patients} handleid={handleid}/>
+              { !patients.length && <div className="text-center mx-auto"><img src={loader_img} /></div> }
+              { patients.length>0 && <PatientTable patients={patients} handleid={handleid}/>}
 
               </div>
             </div>

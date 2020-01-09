@@ -11,7 +11,8 @@ import '../../Dashboard/CSS/AppointmentHistoryStyle.css'
 import attach_icon from '../../../../src/assets/icons/attachment.png'
 import arrow_icon from '../../../../src/assets/icons/back.png'
 import gender_icon from '../../../../src/assets/icons/gender.png'
-
+import home_icon from '../../../../src/assets/icons/home-page.png';
+import breadcrum_icon from '../../../../src/assets/icons/breadcrumb-arrow.png';
 
 const AppointmentDetails=()=>{
 
@@ -91,8 +92,9 @@ const PatientDetails=({handlenameid,match})=>{
       })
     return(
              <div className>
+             
              <div className="row bg-white px-2 py-1">
-             Home /PatientDetails
+            <img src={home_icon} className="my-auto" height="15px" onClick={()=>{handlenameid("","")}}/><img src={breadcrum_icon} height="10px" className="mx-2 my-auto"/><div className="text-muted" onClick={()=>{handlenameid("soham","")}}>Williams Dermick </div><img src={breadcrum_icon} height="10px" className="mx-2 my-auto"/> <div className="text-primary">P01</div> 
              </div>
           <div className="row mx-3 my-4">
            
